@@ -1,0 +1,70 @@
+ <link rel="stylesheet" href="css/wordseach.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <div class="wrap">
+      <center><h2><div id="score">Found 0 out of 10 words so far.</div></h2></center>
+      <section id="ws-area"></section>
+      <ul class="ws-words"></ul>
+    </div>
+	<script src="js/bob.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+
+var gameAreaEl = document.getElementById('ws-area');
+
+      var thesesettings = {
+	      'directions': ['W', 'N', 'WN', 'EN'],
+      	   'gridSize': 18,
+      'words': [
+	     'throne',
+		'palace',
+		'tradition',
+		'family',
+		'descent',
+		'royal',
+		'kingdom',
+		'prince',
+		'law',
+		'earl',
+		'government',
+		'charter',
+		'sovereign',
+		'orb',
+		'commons'
+	  ],
+	      'debug': false,
+		  'same' : true,
+		  'condition' : true,
+		  'test' : false
+      }
+	
+      var listlength = thesesettings.words.length;
+	
+	  //var condition = ${e://Field/Possible_Condition};
+    //  var condition = gup('condition');
+    //  thesesettings.condition = condition;
+     
+	  
+      var gameobj = gameAreaEl.wordSeach(thesesettings);
+
+	
+      // Put words into `.ws-words`
+      var wordsnow = thesesettings.words,
+      wordsWrap = document.querySelector('.ws-words');
+	  var count=0;
+      for (i in wordsnow) {
+		  if (count < listlength) {
+        var liEl = document.createElement('li');
+		liEl.id = wordsnow[i];
+        liEl.setAttribute('class', 'ws-word');
+		liEl.setAttribute("text-decoration", "none");
+        liEl.innerHTML = wordsnow[i];
+        wordsWrap.appendChild(liEl);
+		  }
+		  count = count + 1;
+      }
+						
+	 //var myVar = setInterval(function(){tfunction()}, 1000); 
+	 
+	 
+  </script>

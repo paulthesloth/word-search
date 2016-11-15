@@ -1,0 +1,37 @@
+    <link rel="stylesheet" href="css/wordseach.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <div class="wrap">
+      <center><h2><div id="score">Found 0 out of 10 words so far.</div></h2></center>
+      <section id="ws-area"></section>
+      <ul class="ws-words"></ul>
+    </div>
+	<script src="js/bob.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/wordsearch.js"></script>
+    <script type="text/javascript">
+    
+      var gameAreaEl = document.getElementById('ws-area');
+
+      var settings = {
+	      'directions': ['W', 'N', 'WN', 'EN'],
+      		'gridSize': 20,
+	      'words': ['canada', 'chile', 'egypt', 'germany', 'kenya', 'korea', 'lebanon', 'ireland', 'russia', 'spain', 'uraguay', 'zambia'],
+	      'debug': false
+      }
+	
+      //var condition = gup('condition');
+      //settings.condition = condition;
+     
+	  
+      var gameobj = gameAreaEl.wordSeach(settings);
+
+      // Put words into `.ws-words`
+      var words = gameobj.settings.words,
+        wordsWrap = document.querySelector('.ws-words');
+      for (i in words) {
+        var liEl = document.createElement('li');
+        liEl.setAttribute('class', 'ws-word');
+        liEl.innerHTML = words[i];
+        wordsWrap.appendChild(liEl);
+      }
+    </script>
