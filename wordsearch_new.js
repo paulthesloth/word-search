@@ -384,7 +384,7 @@
 [	'U',	'F',	'P',	'G',	'B',	'C',	'X',	'T',	'K',	'J',	'J'	]
 ];
 
-	var found_words = [] // new list with found words
+	
 	var csize = size;
 	var rsize = size;
 	if (this.settings.condition > 2) { 
@@ -555,7 +555,7 @@
    */
   WordSeach.prototype.lookup = function(selected) {
   
-  
+  	var found_words = [] // new list with found words
     var words = [''];
 
     for (var i = 0; i < selected.length; i++) {
