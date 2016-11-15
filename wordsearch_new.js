@@ -576,9 +576,9 @@
 	  	document.getElementById("score").innerHTML = "Found " + currentscore + " out of " + this.settings.words.length + " words so far.";
 		document.getElementById(words[0]).style.setProperty("text-decoration", "line-through");
 		document.getElementById(words[0]).setAttribute("text-decoration", "line-through");
-		found_words.push(words[0]) // adds found word to list
+		
 	  }
-	  
+	  found_words.push(words[0]) // adds found word to list
 		
 	  
       for (var i = 0; i < selected.length; i++) {
