@@ -555,7 +555,7 @@
    */
   WordSeach.prototype.lookup = function(selected) {
   
-  	var found_words = [] // new list with found words
+  	//var found_words = [] // new list with found words
     var words = [''];
 
     for (var i = 0; i < selected.length; i++) {
@@ -573,7 +573,8 @@
 	  
 	  if(document.getElementById(words[0]).getAttribute("text-decoration") == 'none') {
 		var currentscore = score();
-	  	document.getElementById("score").innerHTML = "Found " + currentscore + " out of " + this.settings.words.length + " words so far.";
+		var found_words = found_words.push(words[0]) // ggyjugfykgfvyifvyf
+	  	document.getElementById("score").innerHTML = "Found " + currentscore + " out of " + found_words +this.settings.words.length + " words so far.";
 		document.getElementById(words[0]).style.setProperty("text-decoration", "line-through");
 		document.getElementById(words[0]).setAttribute("text-decoration", "line-through");
 		
