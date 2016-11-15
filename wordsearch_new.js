@@ -384,6 +384,7 @@
 [	'U',	'F',	'P',	'G',	'B',	'C',	'X',	'T',	'K',	'J',	'J'	]
 ];
 
+	var found_words = [] // new list with found words
 	var csize = size;
 	var rsize = size;
 	if (this.settings.condition > 2) { 
@@ -575,7 +576,9 @@
 	  	document.getElementById("score").innerHTML = "Found " + currentscore + " out of " + this.settings.words.length + " words so far.";
 		document.getElementById(words[0]).style.setProperty("text-decoration", "line-through");
 		document.getElementById(words[0]).setAttribute("text-decoration", "line-through");
+		found_words.push(words[0]) // adds found word to list
 	  }
+	  
 		
 	  
       for (var i = 0; i < selected.length; i++) {
